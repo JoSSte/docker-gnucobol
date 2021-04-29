@@ -11,6 +11,11 @@ $ cobc -xj test.cob
 docker-gnucobol installed successfully!
 ```
 
+## To build and run
+* `docker build -t gnucobol:1.1 .` 
+* `docker container run --name gnucobol gnucobol:1.1`
+* `docker container run --name gnucobol -it --entrypoint /usr/local/bin/bash gnucobol:1.1`
+
 ## License
 
 MIT
