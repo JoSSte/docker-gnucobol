@@ -12,14 +12,14 @@ RUN wget https://downloads.sourceforge.net/project/gnucobol/gnucobol/3.1/gnucobo
 RUN gpg --verify --keyring ./gnu-keyring.gpg gnucobol-3.1.2.tar.gz.sig
 RUN tar zxf gnucobol-3.1.2.tar.gz
 
-WORKDIR gnucobol-3.1.2
+WORKDIR /opt/gnucobol-3.1.2
 RUN ./configure
 RUN make
 RUN make install
 #RUN make check
 RUN ldconfig
 
-WORKDIR ~/
+WORKDIR /opt/
 COPY test.cob .
 RUN cobc --version
 RUN cobc -xj test.cob
