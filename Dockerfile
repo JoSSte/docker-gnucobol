@@ -20,6 +20,7 @@ RUN make install
 RUN ldconfig
 
 WORKDIR /opt/
-COPY test.cob .
+#COPY test.cob .
+#COPY test2.cob .
 RUN cobc --version
-RUN cobc -xj test.cob
+#RUN cobc -xj test.cob
